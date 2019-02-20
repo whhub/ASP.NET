@@ -29,4 +29,14 @@ public class WebService : System.Web.Services.WebService
         return request.requestName;
     }
 
+    [WebMethod]
+    public WorkflowServiceWebReference.WorkflowRequestInfo GetWorkflowRequest(int requestId, int userId)
+    {
+        var workfowService = new WorkflowServiceWebReference.WorkflowService();
+        var request = workfowService.getWorkflowRequest(261887, 383, 0);
+        return request;
+    }
+
+    
+
 }
