@@ -24,7 +24,9 @@ public class WebService : System.Web.Services.WebService
     [WebMethod]
     public string HelloWorld()
     {
-        return "Hello World";
+        var workfowService = new WorkflowServiceWebReference.WorkflowService();
+        var request = workfowService.getWorkflowRequest(261887, 383, 0);
+        return request.requestName;
     }
 
 }
